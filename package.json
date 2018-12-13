@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "dotenv": "^6.2.0",
+    "graphql": "^14.0.2",
+    "graphql-cli": "^2.17.0",
     "prisma": "^1.22.2",
     "prisma-binding": "^2.2.10"
   }
