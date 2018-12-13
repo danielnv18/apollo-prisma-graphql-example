@@ -1,0 +1,2 @@
+endpoint: http://docker:4466
+datamodel: datamodel.graphql
