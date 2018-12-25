@@ -14,13 +14,18 @@
   },
   "homepage": "https://github.com/danielnv18/pm-backend#readme",
   "scripts": {
-    "deploy": "prisma deploy --env-file .env"
+    "deploy": "prisma deploy --env-file .env",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w"
   },
   "dependencies": {
     "dotenv": "^6.2.0",
     "graphql": "^14.0.2",
     "graphql-cli": "^2.17.0",
-    "prisma": "^1.22.2",
+    "prisma": "^1.23.2",
     "prisma-binding": "^2.2.10"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.2"
   }
 }
