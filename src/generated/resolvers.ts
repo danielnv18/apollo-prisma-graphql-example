@@ -27,8 +27,22 @@ export namespace IMutation {
     T["UserRoot"]
   >;
 
+  export interface ArgsSignup {
+    email: string;
+    password: string;
+    username: string;
+  }
+
+  export type SignupResolver<T extends ITypes> = ResolverFn<
+    T["MutationRoot"],
+    ArgsSignup,
+    T["Context"],
+    T["UserRoot"]
+  >;
+
   export interface Resolver<T extends ITypes> {
     signin: SigninResolver<T>;
+    signup: SignupResolver<T>;
   }
 }
 
