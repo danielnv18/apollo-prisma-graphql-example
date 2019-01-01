@@ -11,5 +11,4 @@ export const User: IUser.Resolver<ITypes> = {
 	id: parent => parent.id,
 	name: parent => parent.name,
   email: parent => parent.email,
-  password: parent => parent.password,
 }
