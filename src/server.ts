@@ -10,9 +10,9 @@ export function createServer(): GraphQLServer {
     resolverValidationOptions: {
       requireResolversForResolveType: false
     },
-    context: req => ({
+    context: (req: any) => ({
       ...req,
       database
     })
-  }as any);
+  } as any);
 }
