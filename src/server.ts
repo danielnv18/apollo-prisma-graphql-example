@@ -1,18 +1,19 @@
 import { GraphQLServer } from 'graphql-yoga';
-import { resolvers } from './resolvers';
 import { database } from './database';
+import { resolvers } from './resolvers';
 
 // Create the GraphQL Yoga Server.
 export function createServer(): GraphQLServer {
   return new GraphQLServer({
-    typeDefs: 'src/schema.graphql',
-    resolvers,
-    resolverValidationOptions: {
-      requireResolversForResolveType: false
-    },
-    context: (req: any) => ({
+		context: (req: any) => ({
       ...req,
       database
-    })
+    }),
+		resolverValidationOptions: {
+      requireResolversForResolveType: false
+		},
+		resolvers,
+		typeDefs: 'src/schema.graphql',
+
   } as any);
 }

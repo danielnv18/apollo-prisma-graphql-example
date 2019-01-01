@@ -1,11 +1,11 @@
 import { IResolvers, ITypes } from '../generated/resolvers'
 
-import { Query } from './Query'
 import { Mutation } from './Mutation'
+import { Query } from './Query'
 import { User } from './User'
 
 export const resolvers: IResolvers<ITypes> = {
-  Query,
 	Mutation,
+	Query,
 	User
 }

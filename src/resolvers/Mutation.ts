@@ -1,6 +1,6 @@
-import { IMutation, ITypes } from "../generated/resolvers";
-import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken'
+import { IMutation, ITypes } from "../generated/resolvers";
 
 export const Mutation: IMutation.Resolver<ITypes> = {
 	signin: async (root, { email, password }, ctx, payload) => {

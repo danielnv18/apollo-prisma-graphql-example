@@ -1,7 +1,7 @@
 import cookieParser from "cookie-parser";
 import jwt from 'jsonwebtoken';
-import { createServer } from "./server";
 import { database } from './database';
+import { createServer } from "./server";
 
 const server = createServer();
 server.use(cookieParser());
@@ -22,7 +22,7 @@ server.express.use((req, res, next) => {
 // Create a middleware that populates the user on each request
 server.express.use(async (req, res, next) => {
 	// if they aren't logged in, skip this
-	if (!req.userId) next();
+	if (!req.userId) { next(); }
 	const user = await database.query.user(
     {
       where: {
