@@ -53,7 +53,7 @@ export namespace IUser {
     string
   >;
 
-  export type NameResolver<T extends ITypes> = ResolverFn<
+  export type UsernameResolver<T extends ITypes> = ResolverFn<
     T["UserRoot"],
     {},
     T["Context"],
@@ -69,7 +69,7 @@ export namespace IUser {
 
   export interface Resolver<T extends ITypes> {
     id: IdResolver<T>;
-    name: NameResolver<T>;
+    username: UsernameResolver<T>;
     email: EmailResolver<T>;
   }
 }

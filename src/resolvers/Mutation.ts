@@ -23,5 +23,36 @@ export const Mutation: IMutation.Resolver<ITypes> = {
     });
     // 5. Return the user
     return user;
-  }
+  },
+	signup: async (root, args, ctx, payload) => {
+		// lowercase their email
+		const email = args.email.toLowerCase();
+		// hash their password
+		const password = await bcrypt.hash(args.password, 10);
+		// create the user in the database
+    const user = await ctx.db.mutation.createUser(
+      {
+        data: {
+          ...args,
+					email,
+					password,
+        }
+      },
+      payload
+		);
+		// create the JWT token for them
+    const token = jwt.sign(
+      {
+        userId: user.id
+      },
+      process.env.APP_SECRET
+		);
+		// We set the jwt as a cookie on the response
+    ctx.response.cookie('token', token, {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 * 365 // 1 year cookie
+		});
+		// return the user to the browser
+    return user;
+	}
 }

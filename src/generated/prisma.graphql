@@ -1,5 +1,5 @@
-# source: http://docker:4466
-# timestamp: Tue Dec 25 2018 09:14:51 GMT-0600 (Central Standard Time)
+# source: http://localhost:4466
+# timestamp: Tue Jan 01 2019 11:18:33 GMT-0600 (Central Standard Time)
 
 type AggregateUser {
   count: Int!
@@ -70,7 +70,7 @@ type Subscription {
 
 type User implements Node {
   id: ID!
-  name: String!
+  username: String!
   email: String!
   password: String!
 }
@@ -86,7 +86,7 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  name: String!
+  username: String!
   email: String!
   password: String!
 }
@@ -103,8 +103,8 @@ type UserEdge {
 enum UserOrderByInput {
   id_ASC
   id_DESC
-  name_ASC
-  name_DESC
+  username_ASC
+  username_DESC
   email_ASC
   email_DESC
   password_ASC
@@ -117,7 +117,7 @@ enum UserOrderByInput {
 
 type UserPreviousValues {
   id: ID!
-  name: String!
+  username: String!
   email: String!
   password: String!
 }
@@ -162,13 +162,13 @@ input UserSubscriptionWhereInput {
 }
 
 input UserUpdateInput {
-  name: String
+  username: String
   email: String
   password: String
 }
 
 input UserUpdateManyMutationInput {
-  name: String
+  username: String
   email: String
   password: String
 }
@@ -222,46 +222,46 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   id_not_ends_with: ID
-  name: String
+  username: String
 
   """All values that are not equal to given value."""
-  name_not: String
+  username_not: String
 
   """All values that are contained in given list."""
-  name_in: [String!]
+  username_in: [String!]
 
   """All values that are not contained in given list."""
-  name_not_in: [String!]
+  username_not_in: [String!]
 
   """All values less than the given value."""
-  name_lt: String
+  username_lt: String
 
   """All values less than or equal the given value."""
-  name_lte: String
+  username_lte: String
 
   """All values greater than the given value."""
-  name_gt: String
+  username_gt: String
 
   """All values greater than or equal the given value."""
-  name_gte: String
+  username_gte: String
 
   """All values containing the given string."""
-  name_contains: String
+  username_contains: String
 
   """All values not containing the given string."""
-  name_not_contains: String
+  username_not_contains: String
 
   """All values starting with the given string."""
-  name_starts_with: String
+  username_starts_with: String
 
   """All values not starting with the given string."""
-  name_not_starts_with: String
+  username_not_starts_with: String
 
   """All values ending with the given string."""
-  name_ends_with: String
+  username_ends_with: String
 
   """All values not ending with the given string."""
-  name_not_ends_with: String
+  username_not_ends_with: String
   email: String
 
   """All values that are not equal to given value."""
