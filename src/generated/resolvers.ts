@@ -22,7 +22,7 @@ export namespace IMutation {
 
   export type SigninResolver<T extends ITypes> = ResolverFn<
     T["MutationRoot"],
-    {},
+    ArgsSignin,
     T["Context"],
     T["UserRoot"]
   >;

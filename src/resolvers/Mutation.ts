@@ -3,8 +3,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs';
 
 export const Mutation: IMutation.Resolver<ITypes> = {
-	signin: async (root, { data }, ctx, payload) => {
-		const { email, password } = data;
+	signin: async (root, { email, password }, ctx, payload) => {
     // 1. check if there is a user with that email
     const user = await ctx.db.query.user({ where: { email } });
     if (!user) {
