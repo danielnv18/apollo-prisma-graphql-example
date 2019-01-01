@@ -20,7 +20,8 @@
     "watch-node": "nodemon --exec \"node -r dotenv/config\" dist/index.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
     "build-ts": "tsc",
-    "watch-ts": "tsc -w",
+		"watch-ts": "tsc -w",
+		"tslint": "tslint -c tslint.json -p tsconfig.json --fix",
     "generate-resolvers": "graphql-resolver-codegen interfaces -s src/schema.graphql -o src/generated/resolvers.ts"
   },
   "dependencies": {
@@ -46,6 +47,7 @@
     "concurrently": "^4.1.0",
     "graphql-resolver-codegen": "0.0.3",
     "nodemon": "^1.18.9",
+    "tslint": "^5.12.0",
     "typescript": "^3.2.2"
   }
 }
