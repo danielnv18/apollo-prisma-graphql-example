@@ -1,14 +1,15 @@
 # import * from './generated/prisma.graphql'
 
-input UserCredentialsInput {
-  email: String!
-  password: String!
-}
-
 type Mutation {
-	signin(data: UserCredentialsInput!): User!
+	signin(email: String!, password: String!): User!
 }
 
 type Query {
   me: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
 }
