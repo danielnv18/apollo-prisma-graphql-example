@@ -29,10 +29,9 @@
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.2.0",
     "graphql": "^14.0.2",
-    "graphql-cli": "^3.0.3",
     "graphql-yoga": "^1.16.9",
     "jsonwebtoken": "^8.4.0",
-    "prisma": "^1.23.2",
+    "prisma": "^1.24.0",
     "prisma-binding": "^2.2.10"
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "@types/node": "^10.12.18",
     "@types/ws": "^6.0.1",
     "concurrently": "^4.1.0",
+    "graphql-cli": "^3.0.4",
     "graphql-resolver-codegen": "0.0.3",
     "nodemon": "^1.18.9",
     "tslint": "^5.12.0",

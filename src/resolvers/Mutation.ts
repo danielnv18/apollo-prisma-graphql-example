@@ -5,7 +5,7 @@ import { IMutation, ITypes } from "../generated/resolvers";
 export const Mutation: IMutation.Resolver<ITypes> = {
 	signin: async (root, { email, password }, ctx, payload) => {
     // 1. check if there is a user with that email
-    const user = await ctx.db.query.user({ where: { email } });
+    const user = await ctx.database.query.user({ where: { email } });
     if (!user) {
       throw new Error(`No such user found for email ${email}`);
     }
@@ -30,7 +30,7 @@ export const Mutation: IMutation.Resolver<ITypes> = {
 		// hash their password
 		const password = await bcrypt.hash(args.password, 10);
 		// create the user in the database
-    const user = await ctx.db.mutation.createUser(
+    const user = await ctx.database.mutation.createUser(
       {
         data: {
           ...args,
